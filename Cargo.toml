@@ -1,0 +1,132 @@
+[package]
+name = "generic-harness"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "generic_harness"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+rust = {}
+
+[lints.clippy]
+await_holding_invalid_type = "deny"
+await_holding_lock = "deny"
+expect_used = "deny"
+identity_op = "deny"
+manual_clamp = "deny"
+manual_filter = "deny"
+manual_find = "deny"
+manual_flatten = "deny"
+manual_map = "deny"
+manual_memcpy = "deny"
+manual_non_exhaustive = "deny"
+manual_ok_or = "deny"
+manual_range_contains = "deny"
+manual_retain = "deny"
+manual_strip = "deny"
+manual_try_fold = "deny"
+manual_unwrap_or = "deny"
+needless_borrow = "deny"
+needless_borrowed_reference = "deny"
+needless_collect = "deny"
+needless_late_init = "deny"
+needless_option_as_deref = "deny"
+needless_question_mark = "deny"
+needless_update = "deny"
+redundant_clone = "deny"
+redundant_closure = "deny"
+redundant_closure_for_method_calls = "deny"
+redundant_static_lifetimes = "deny"
+trivially_copy_pass_by_ref = "deny"
+uninlined_format_args = "deny"
+unnecessary_filter_map = "deny"
+unnecessary_lazy_evaluations = "deny"
+unnecessary_sort_by = "deny"
+unnecessary_to_owned = "deny"
+unwrap_used = "deny"
+
+[dependencies]
+anyhow = "1"
+arc-swap = "1.9.0"
+async-channel = "2.3.1"
+async-trait = "0.1.89"
+base64 = "0.22.1"
+bm25 = "2.3.2"
+chrono = { version = "0.4.43", features = ["serde"] }
+clap = { version = "4", features = ["derive"] }
+csv = "1.3.1"
+dirs = "6"
+dunce = "1.0.4"
+eventsource-stream = "0.2.3"
+futures = { version = "0.3", default-features = false }
+http = "1.3.1"
+iana-time-zone = "0.1.64"
+image = { version = "^0.25.9", default-features = false, features = [
+    "jpeg",
+    "png",
+    "webp",
+] }
+indexmap = "2.12.0"
+libc = "0.2.182"
+once_cell = "1.20.2"
+rand = "0.9"
+regex-lite = "0.1.8"
+reqwest = { version = "0.12", features = ["json", "stream"] }
+rmcp = { version = "1.7.0", default-features = false, features = [
+    "base64",
+    "macros",
+    "schemars",
+    "server",
+] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha1 = "0.10.6"
+shlex = "1.3.0"
+similar = "2.7.0"
+tempfile = "3.23.0"
+thiserror = "2.0.17"
+tokio = { version = "1", features = [
+    "io-std",
+    "macros",
+    "process",
+    "rt-multi-thread",
+    "signal",
+] }
+tokio-util = { version = "0.7.18", features = ["rt"] }
+tokio-tungstenite = { version = "0.28.0", features = [
+    "rustls-tls-native-roots",
+] }
+toml = "0.9.5"
+toml_edit = "0.24.0"
+tracing = { version = "0.1.44", features = ["log"] }
+url = "2"
+uuid = { version = "1", features = ["serde", "v4", "v5", "v7"] }
+which = "8"
+whoami = "1.6.1"
+
+[dev-dependencies]
+assert_cmd = "2"
+assert_matches = "1.5.0"
+ctor = "0.6.3"
+insta = "1.46.3"
+maplit = "1.0.2"
+opentelemetry = "0.31.0"
+predicates = "3"
+pretty_assertions = "1.4.1"
+test-case = "3.3.1"
+opentelemetry_sdk = { version = "0.31.0", features = [
+    "experimental_metrics_custom_reader",
+    "metrics",
+] }
+serial_test = "3.2.0"
+tempfile = "3.23.0"
+test-log = "0.2.19"
+tracing-opentelemetry = "0.32.0"
+tracing-subscriber = "0.3.22"
+tracing-test = { version = "0.2.5", features = ["no-env-filter"] }
+walkdir = "2.5.0"
+wiremock = "0.6"
+zstd = "0.13"
