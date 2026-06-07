@@ -5,6 +5,6 @@
 
 mod error;
 mod harness_thread;
+mod protocol;
 mod session;
-pub use harness_thread::HarnessThread;
 mod thread_manager;
